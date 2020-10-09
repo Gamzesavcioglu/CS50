@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<cs50.h>
+
+
+
+
+int main()
+
+{
+    
+  
+   long card_no ,number, value, card_num;
+   int i=0, sum=0, multi_number=0;
+   
+   // Array C dilinde dinamik yapılabilir ancak eğitimde kullanılan ide hata veriyor.
+   int array[30];
+   
+   // Kullanıcıdan long uzunluğunda numara istenir.
+      card_no = get_long("Enter card number");
+       card_num = card_no;
+
+     // Girilen sayılar basamaklarına ayırılır.
+    while(card_num > 0)
+    {
+      
+      number = card_num%10;
+
+     array[i] = number;
+        i++;
+        
+        value = card_num/10;
+        card_num = value;
+        
+        
+    }
+   
+    
+     value = 0;
+    number =0;
+    // Girilen sayının son basamağı array de ilk basamak olmuştur ve sondan bakıldığında iki basamak olarak ilerleyecekken bu şekilde girilen sayının sondan ikinci değeri
+    arrayda tek  j değerlerinde bulunmaktadır.
+    
+    for(int j=0 ; j<i ; j++)
+    {
+        if ( j%2  !=  0 )
+        {
+            multi_number =  array[j]*2;
+           
+            
+            while(multi_number > 0)
+            
+            {
+                number = multi_number%10;
+                sum += number;
+       
+                value  =  multi_number/10;
+                 multi_number = value;
+
+            }
+        
+        }
+      
+        else
+        {
+            sum += array[j];
+        }
+       
+    }
+   
+  
+   if(sum % 10 != 0 || i<13 || i>16)
+   {
+          printf("INVALID\n");
+   }
+    else
+  {
+
+        if  ( array[i-1]==3  &&   ( array[i-2]==7|| array[i-2]==7 ) )
+       {
+                 printf("AMEX\n");
+        }
+       else if  ( array[i-1] == 4)
+       {
+                printf("VISA\n");
+        }
+       else if  ( array[i-1]==5  &&  ( array [i-2]==1 || array [i-2]==2   || array [i-2] == 3 ||  array [i-2] == 4 || array[i-2] == 5 )  )
+        {
+        
+              printf("MASTERCARD\n");
+               
+        }
+       else 
+        {
+        
+               printf("INVALID\n");
+          }
+          
+   }
+
+
+
+    
+}
