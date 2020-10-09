@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include<cs50.h>
+
+
+int main(void)
+{
+    int height=0 ,value = 1 ;
+    
+   
+    
+    
+   height = get_int (" Enter height");
+   
+  // Kullanıcı 1 ile 8 arası pozitif tamsayı değerini girene kadar sorma kodu do while ile de yapılabilir. 
+  while (value>0)
+  {
+      
+   if(height >=1 && height <=8)
+   {
+      value = -1;
+    
+   }
+     
+     else
+     {
+         value = 1;
+      height = get_int (" Enter height");
+
+   }
+   
+  }
+  
+       for(int i=0;i<height;i++)
+        
+ {
+      for(int k = height-i-1 ; k>0 ; k--)
+         {
+             printf(" ");
+         }
+         
+         
+     for(int j=0 ; j<i+1 ; j++)
+     {
+        
+         printf("#");
+        
+     }
+     
+    printf("  ");
+    
+    
+     for(int j=0 ; j<i+1 ; j++)
+     {
+        
+         printf("#");
+        
+     }
+    
+     
+     
+     
+     printf("\n");
+     
+     
+ }
+    
+       
+      
+    
+ 
+}
